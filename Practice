@@ -16,14 +16,19 @@
 
 	//  1.  Dart's main method is named main() or (if you need access to command line arguments) main(List<String> args).
 	
-	//  2. The main() method lives at the top level. In Dart, you can define code outside of classes. Variables, functions, getters, and setters can all live outside of classes.
+	//  2. The main() method lives at the top level. In Dart, you can define code outside of classes. 
+		Variables, functions, getters, and setters can all live outside of classes.
 
-	//  3. The original Java example declares private instance variables using the private tag, which Dart doesn't use. You'll learn more about privacy in "Step 3: Add a read-only variable".
+	//  3. The original Java example declares private instance variables using the private tag, which Dart doesn't use. 
+		You'll learn more about privacy in "Step 3: Add a read-only variable".
 
-	//  4. Neither main() nor Bicycle is declared as public, because all identifiers are public by default. Dart doesn't have keywords for public, private, or protected.
+	//  4. Neither main() nor Bicycle is declared as public, because all identifiers are public by default. 
+		Dart doesn't have keywords for public, private, or protected.
 
-	//  5. Dart uses 2-character indentation, by convention, instead of 4. You don't need to worry about Dart's whitespace conventions, thanks to a handy tool called dartfmt. 
-		As the Dart code conventions (Effective Dart) say, "The official whitespace-handling rules for Dart are whatever dartfmt produces."
+	//  5. Dart uses 2-character indentation, by convention, instead of 4. 
+		You don't need to worry about Dart's whitespace conventions, thanks to a handy tool called dartfmt. 
+		As the Dart code conventions (Effective Dart) say, 
+		"The official whitespace-handling rules for Dart are whatever dartfmt produces."
 
 	DEFINING A BICYCLE CONSTRUCTOR:
 
@@ -67,11 +72,13 @@
 
 	O/P should be -->>  Instance of 'Bicycle
 
-	Observations: No errors or warnings should appear, indicating that type inference is working, and that the analyzer infers that var bike = ... defines a Bicycle instance.
+	Observations: No errors or warnings should appear, indicating that type inference is working, 
+			and that the analyzer infers that var bike = ... defines a Bicycle instance.
 
 	IMPROVE THE OUTPUT:
 
-		While the output "Instance of ‘Bicycle'" is correct, it's not very informative. All Dart classes have a toString() method that you can override to provide more useful output.
+		While the output "Instance of ‘Bicycle'" is correct, it's not very informative. 
+		All Dart classes have a toString() method that you can override to provide more useful output.
 
 		Add the following toString() method anywhere in the Bicycle class:
 
@@ -80,11 +87,13 @@
 
 	Observations:
 
-	// 1. The @override annotation tells the analyzer that you are intentionally overriding a member. The analyzer raises an error if you've failed to perform the override properly.
+	// 1. The @override annotation tells the analyzer that you are intentionally overriding a member. 
+		The analyzer raises an error if you've failed to perform the override properly.
 
 	// 2. Dart supports single or double quotes when specifying strings.
 	
-	// 3. Use string interpolation to put the value of an expression inside a string literal: ${expression}. If the expression is an identifier, you can skip the braces: $variableName.
+	// 3. Use string interpolation to put the value of an expression inside a string literal: ${expression}. 
+		If the expression is an identifier, you can skip the braces: $variableName.
 
 	// 4. Shorten one-line functions or methods using fat arrow (=>) notation.
 
@@ -100,7 +109,8 @@
 	Make speed a private, read-only instance variable
 	In the Bicycle constructor, remove the speed parameter:    -->>  Bicycle(this.cadence, this.gear);
 
-	In main(), remove the second (speed) parameter from the call to the Bicycle constructor:  -->>  var bike = Bicycle(2, 1);
+	In main(), 
+	remove the second (speed) parameter from the call to the Bicycle constructor:  -->>  var bike = Bicycle(2, 1);
 
 	Change the remaining occurrences of speed to _speed. (2 places)
 
@@ -119,13 +129,16 @@
 	// 2. The Dart compiler enforces privacy for any identifier prefixed with an underscore.
 
 	// 3. By default, Dart provides implicit getters and setters for all public instance variables. 
-			You don't need to define your own getters/setters unless you want to enforce read-only or write-only variables, compute or verify a value, or update a value elsewhere.
+		You don't need to define your own getters/setters unless you want to enforce read-only or 
+		write-only variables, compute or verify a value, or update a value elsewhere.
 
-	// 4. Since getters and setters were provided for cadence and gear in the original Java example, they aren't, by definition, considered private in the Dartiverse. 
-			Those instance variables can be accessed using bike.gear or bike.cadence.
+	// 4. Since getters and setters were provided for cadence and gear in the original Java example, 
+		they aren't, by definition, considered private in the Dartiverse. 
+		Those instance variables can be accessed using bike.gear or bike.cadence.
 
 	// 5. You might start with a simple field, like bike.cadence, and later refactor it to use getters and setters. 
-			The API stays the same. In other words, going from a field to a getter/setter is not a breaking change in Dart.
+		The API stays the same. 
+		In other words, going from a field to a getter/setter is not a breaking change in Dart.
 
 	FINISH IMPLEMENTING SPEED AS A READ-ONLY INSTANCE VARIABLE:
 
